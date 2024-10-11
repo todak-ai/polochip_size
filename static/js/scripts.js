@@ -150,8 +150,8 @@ function drawVerticalGuidelines() {
     const lineX1 = canvasElement.width * 0.3;
     const lineX2 = canvasElement.width * 0.7;
 
-    canvasCtx.strokeStyle = 'blue';
-    canvasCtx.lineWidth = 2;
+    canvasCtx.strokeStyle = 'yellow';
+    canvasCtx.lineWidth = 3;
 
     // 왼쪽 수직선
     canvasCtx.beginPath();
