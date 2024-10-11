@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>실시간 신체 사이즈 측정</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v=time()) }}">
+
     <!-- Google Fonts 추가 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap">
 
