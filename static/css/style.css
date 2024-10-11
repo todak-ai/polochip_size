@@ -81,6 +81,23 @@ h1 {
     margin-top: 10px;
 }
 
+.shop-link-button {
+    display: inline-block;
+    background-color: #4CAF50; /* 버튼 배경색 */
+    color: white; /* 글자 색 */
+    padding: 10px 20px; /* 패딩 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-size: 1.8em; /* 글자 크기 */
+    border-radius: 5px; /* 둥근 모서리 */
+    transition: background-color 0.3s ease; /* 호버 애니메이션 */
+}
+
+.shop-link-button:hover {
+    background-color: #45a049; /* 호버 시 배경색 변경 */
+}
+
+
 @media screen and (max-width: 600px) {
     .container {
         padding: 10px;
