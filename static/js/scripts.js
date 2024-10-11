@@ -252,7 +252,7 @@ function calculateMeasurements(landmarks) {
     }
 
     // 스케일 변환
-    const scale = userHeightCm / totalHeightPx / 2;
+    const scale = userHeightCm / totalHeightPx / 1.9;
 
     // 측정값을 센티미터로 변환
     const shoulderWidthCm = shoulderWidthPx * scale;
