@@ -75,9 +75,16 @@ h1 {
     margin-bottom: 5px;
 }
 
-#feedback, #countdown {
-    font-size: 3em;
+#feedback {
+    font-size: 1.5em;
     color: #e74c3c;
+    margin-top: 10px;
+}
+
+#countdown {
+    font-size: 4em;
+    color: #e74c3c;
+    text-align: center; /* 텍스트 가운데 정렬 */
     margin-top: 10px;
 }
 
@@ -88,13 +95,13 @@ h1 {
     padding: 10px 20px; /* 패딩 */
     text-align: center; /* 텍스트 가운데 정렬 */
     text-decoration: none; /* 밑줄 제거 */
-    font-size: 1.8em; /* 글자 크기 */
+    font-size: 1.6em; /* 글자 크기 */
     border-radius: 5px; /* 둥근 모서리 */
     transition: background-color 0.3s ease; /* 호버 애니메이션 */
 }
 
 .shop-link-button:hover {
-    background-color: #45a049; /* 호버 시 배경색 변경 */
+    background-color: #FF6347; /* 호버 시 배경색 변경 */
 }
 
 
