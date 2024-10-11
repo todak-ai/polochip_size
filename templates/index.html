@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>실시간 신체 사이즈 측정</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <!-- Google Fonts 추가 -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Google Fonts 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap">
 
 </head>
 <body>
     <div class="container">
-      <h1>실시간 신체 사이즈 측정</h1>
-      <p id="instructions">수직 가이드 라인 사이에 몸을 맞추고,<br>3초 동안 가만히 서주세요.</p>
-      <div class="video-container">
-          <canvas id="output"></canvas>
-          <!-- 비디오 요소는 숨겨서 화면에 표시되지 않도록 합니다 -->
-          <video id="video" autoplay playsinline style="display: none;"></video>
-      </div>
-      <div id="controls">
-          <label for="height-input">키 (cm):</label>
-          <input type="number" id="height-input" name="height" step="0.1" min="50" max="250" value="170" required>
-      </div>
-      <div id="result">
-          <h2>측정 결과 (참고만 하세요)</h2>
-          <div>어깨 너비 : <span id="shoulder-width">측정 중...</span></div>
-          <div>소매 기장 : <span id="sleeve-length">측정 중...</span></div>
-          <div>총기장 : <span id="total-length">측정 중...</span></div>
-          <div>골반 길이? : <span id="hem-width">측정 중...</span></div>
+        <h1>실시간 신체 사이즈 측정</h1>
+        <p id="instructions">수직 가이드 라인 사이에 몸을 맞추고,<br>3초 동안 가만히 서주세요.</p>
+        <div class="video-container">
+            <canvas id="output"></canvas>
+            <!-- 비디오 요소는 숨겨서 화면에 표시되지 않도록 합니다 -->
+            <video id="video" autoplay playsinline style="display: none;"></video>
+        </div>
+        <div id="controls">
+            <label for="height-input">키 (cm):</label>
+            <input type="number" id="height-input" name="height" step="0.1" min="50" max="250" value="170" required>
+        </div>
+        <div id="result">
+            <h2>측정 결과 (참고만 하세요)</h2>
+            <div>어깨 너비 : <span id="shoulder-width">측정 중...</span></div>
+            <div>소매 기장 : <span id="sleeve-length">측정 중...</span></div>
+            <div>총기장 : <span id="total-length">측정 중...</span></div>
+            <div>골반 길이? : <span id="hem-width">측정 중...</span></div>
 
-          <p id="feedback"></p>
-          <p id="countdown"></p>
-      </div>
+            <p id="feedback"></p>
+            <p id="countdown"></p>
+        </div>
     </div>
     <!-- 라이브러리 스크립트 -->
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5/pose.js"></script>
