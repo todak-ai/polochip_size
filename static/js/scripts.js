@@ -32,22 +32,27 @@ function resetCountdown() {
 
 function startCountdown() {
     countdownElement.innerText = countdown;
+
     countdownInterval = setInterval(() => {
-        countdown--;
         if (countdown > 0) {
+            countdown--; // 카운트다운 감소
             countdownElement.innerText = countdown;
         } else {
-            clearInterval(countdownInterval); // 카운트다운 중단
+            // 카운트다운 중단
+            clearInterval(countdownInterval);
             countdownInterval = null;
-            countdownElement.innerText = '결과는 아래에서 확인'; // "측정 완료" 메시지 표시
 
-            // 측정 완료 메시지를 2초 동안 표시 후 측정 수행
+            // "측정 완료" 메시지 표시
+            countdownElement.innerText = '측정 완료';
+
+            // 2초 대기 후 측정 수행
             setTimeout(() => {
                 performMeasurement();
-            }, 2000); // 2000ms = 2초 대기
+            }, 2000); // 2초 대기
         }
     }, 1000);
 }
+
 
 
 // **performMeasurement 함수 정의**
