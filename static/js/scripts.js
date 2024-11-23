@@ -22,7 +22,9 @@ let lastPoseLandmarks = null;
 let measurements = null; // 측정값 저장용
 
 function resetCountdown() {
-    clearInterval(countdownInterval);
+    if (countdownInterval) {
+        clearInterval(countdownInterval); // 현재 카운트다운 중단
+    }
     countdownInterval = null;
     countdown = 3;
     countdownElement.innerText = '';
@@ -35,14 +37,14 @@ function startCountdown() {
         if (countdown > 0) {
             countdownElement.innerText = countdown;
         } else {
-            clearInterval(countdownInterval);
+            clearInterval(countdownInterval); // 카운트다운 중단
             countdownInterval = null;
-            countdownElement.innerText = '결과는 아래에서 확인'; // 카운트다운 완료 시 "측정 완료" 출력
+            countdownElement.innerText = '결과는 아래에서 확인'; // "측정 완료" 메시지 표시
 
-            // 측정 완료 메시지를 2초간 표시한 후 측정 수행
+            // 측정 완료 메시지를 2초 동안 표시 후 측정 수행
             setTimeout(() => {
                 performMeasurement();
-            }, 2000); // 2000ms = 2초
+            }, 2000); // 2000ms = 2초 대기
         }
     }, 1000);
 }
