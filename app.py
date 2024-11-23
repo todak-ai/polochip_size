@@ -1,9 +1,7 @@
 import os
 from flask import Flask, render_template
-from flask_caching import Cache
 
 app = Flask(__name__, static_folder='static')
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 @app.route('/')
 def index():
