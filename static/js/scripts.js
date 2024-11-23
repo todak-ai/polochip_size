@@ -10,7 +10,7 @@ const totalLengthOutput = document.getElementById('total-length');
 const hemWidthOutput = document.getElementById('hem-width');
 const feedbackElement = document.getElementById('feedback');
 const countdownElement = document.getElementById('countdown');
-
+let countdownRunning = false; // 카운트다운 상태를 저장하는 변수
 let userHeightCm = parseFloat(heightInput.value);
 heightInput.addEventListener('change', () => {
     userHeightCm = parseFloat(heightInput.value);
@@ -31,6 +31,9 @@ function resetCountdown() {
 }
 
 function startCountdown() {
+    if (countdownRunning) return; // 카운트다운 중복 실행 방지
+    countdownRunning = true;
+
     countdownElement.innerText = countdown;
 
     countdownInterval = setInterval(() => {
@@ -38,17 +41,15 @@ function startCountdown() {
             countdown--; // 카운트다운 감소
             countdownElement.innerText = countdown;
         } else {
-            // 카운트다운 중단
-            clearInterval(countdownInterval);
+            clearInterval(countdownInterval); // 카운트다운 중단
             countdownInterval = null;
+            countdownElement.innerText = '측정 완료'; // "측정 완료" 메시지 표시
 
-            // "측정 완료" 메시지 표시
-            countdownElement.innerText = '측정 완료';
-
-            // 2초 대기 후 측정 수행
+            // 측정 완료 메시지를 2초 동안 유지
             setTimeout(() => {
                 performMeasurement();
-            }, 2000); // 2초 대기
+                countdownRunning = false; // 카운트다운 종료 상태로 변경
+            }, 2000); // 2초 대기 후 측정 실행
         }
     }, 1000);
 }
