@@ -82,10 +82,9 @@ h1 {
 }
 
 #countdown {
-    font-size: 4em;
+    font-size: 3em;
     color: #e74c3c;
     text-align: center; /* 텍스트 가운데 정렬 */
-    margin-top: 10px;
 }
 
 .shop-link-button {

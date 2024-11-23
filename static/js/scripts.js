@@ -37,9 +37,12 @@ function startCountdown() {
         } else {
             clearInterval(countdownInterval);
             countdownInterval = null;
-            countdownElement.innerText = '측정 완료'; // 카운트다운 완료 시 "측정 완료" 출력
-            // 측정 수행
-            performMeasurement();
+            countdownElement.innerText = '결과는 아래에서 확인'; // 카운트다운 완료 시 "측정 완료" 출력
+
+            // 측정 완료 메시지를 2초간 표시한 후 측정 수행
+            setTimeout(() => {
+                performMeasurement();
+            }, 2000); // 2000ms = 2초
         }
     }, 1000);
 }
