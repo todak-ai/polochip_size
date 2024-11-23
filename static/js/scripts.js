@@ -37,12 +37,13 @@ function startCountdown() {
         } else {
             clearInterval(countdownInterval);
             countdownInterval = null;
-            countdownElement.innerText = '측정 중...';
+            countdownElement.innerText = '측정 완료'; // 카운트다운 완료 시 "측정 완료" 출력
             // 측정 수행
             performMeasurement();
         }
     }, 1000);
 }
+
 
 // **performMeasurement 함수 정의**
 function performMeasurement() {
