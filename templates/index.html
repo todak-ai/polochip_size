@@ -12,6 +12,7 @@
     <div class="container">
         <h1>실시간 신체 사이즈 측정</h1>
         <p id="instructions">수직 가이드 라인 사이에 몸을 맞추고,<br>3초 동안 가만히 서주세요.</p>
+        <p id="countdown"></p>
         <div class="video-container">
             <canvas id="output"></canvas>
             <!-- 비디오 요소는 숨겨서 화면에 표시되지 않도록 합니다 -->
@@ -23,7 +24,6 @@
         </div>
         <div id="result">
             <p id="feedback"></p>
-            <p id="countdown"></p>
             <h2>측정 결과 (참고만 하세요)</h2>
             <div>어깨 너비 : <span id="shoulder-width">측정 중...</span></div>
             <div>소매 기장 : <span id="sleeve-length">측정 중...</span></div>
